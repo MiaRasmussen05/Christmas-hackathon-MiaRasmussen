@@ -103,3 +103,16 @@ function handleTimerVisibility() {
 }
 
 window.addEventListener('scroll', handleTimerVisibility);
+
+document.addEventListener("DOMContentLoaded", function() {
+    const calendarSection = document.getElementById("calendar-section");
+    const calendarBtn = document.getElementById("calendar-btn");
+    const today = new Date();
+    
+    // Check if the current month is December
+    if(today.getMonth() !== 11) {
+      // Remove the calender section and nav btn from the DOM if it's not December
+        calendarSection.remove();
+        calendarBtn.style.display = "none";
+    }
+});
